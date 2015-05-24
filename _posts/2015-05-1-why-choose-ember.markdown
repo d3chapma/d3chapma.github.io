@@ -4,8 +4,6 @@ title:  "Why Choose Ember.js?"
 date:   2015-05-01
 categories: ember
 ---
-#Why Choose Ember?
-
 There is a lot to consider when choosing your tools. There are plenty of factors to consider, not the least of which is whether a specific tool will be able to withstand the technical demands of your project as it grows. One problem is that many teams spend a significant period of time before each new project researching and analyzing the tools available to try to ensure that they run into as few technical roadblocks as possible down the road. 
 
 Though there is some merit to this critical investigation, I lean toward the opinion that you should always choose the tools that you enjoy using the most and that are going to give you, as a developer, the most opportunity. This article is my argument for Ember as the most joy-inducing client-side framework available. I will not be comparing directly to other frameworks or libraries. My assumption is that you can compare the points that you see importance in with the libraries that you are already interested it. You can generally get a sense of these things after a bit of time trying to learn the framework and being involved in the community.
