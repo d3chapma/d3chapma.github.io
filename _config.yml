@@ -11,3 +11,6 @@ github_username:  d3chapma
 
 # Build settings
 markdown: kramdown
+
+gems:
+  - jekyll-sitemap

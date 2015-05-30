@@ -4,7 +4,7 @@ title:  "Ember Learning Resources"
 date:   2015-04-10
 categories: ember learning resources
 ---
-This post is intended to be a repository of great resources for getting the most out of Ember. I will do my best to revise this every few months to make source it is only referencing up-to-date material. If you have any other suggestions for things that I have missed, drop them in the comments and I'll add them.
+This post is intended to be a repository of great resources for getting the most out of Ember. I will do my best to revise this every few months to make sure it is only referencing up-to-date material. If you have any other suggestions for things that I have missed, drop them in the comments and I'll add them.
 
 Official Resources
 ===========================
