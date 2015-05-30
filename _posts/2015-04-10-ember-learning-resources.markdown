@@ -23,7 +23,7 @@ Conference/Meetup Talks
 Screencasts
 ===========
 
-[Embercasts](http://www.emberscreencasts.com/): Have not used this much myself, but as far as I can tell it is the only active screencast series in the Ember community.
+[Ember Screencasts](http://www.emberscreencasts.com/): Have not used this much myself, but as far as I can tell it is the only active screencast series in the Ember community.
 
 Podcasts
 ========
@@ -38,6 +38,8 @@ Books
 =====
 
 [Ember-CLI 101](https://leanpub.com/ember-cli-101): A great book for getting started with Ember. Gets updates regularly.
+
+[Ambitious Ember Applications](https://leanpub.com/emberjs_applications)
 
 Newsletters
 ===========
