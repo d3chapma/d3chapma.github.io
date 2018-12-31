@@ -1,16 +1,14 @@
 # Site settings
-title: TIL with David Chapman
-email: talk2dc@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Things I come across or come up with in my day-to-day. Specifically interested
-  in Ruby on Rails, Ember.js, UX, and Hiring.
+title: David Chapman
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://d3chapma.github.io" # the base hostname & protocol for your site
 twitter_username: d3chapma
 github_username:  d3chapma
+collections:
+  - sublime_text
 
 # Build settings
 markdown: kramdown
 
-gems:
+plugins:
   - jekyll-sitemap
