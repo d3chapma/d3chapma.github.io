@@ -1,14 +1,18 @@
 # Site settings
 title: David Chapman
-baseurl: "" # the subpath of your site, e.g. /blog/
+
+# URL
+baseurl:            ""
+#baseurl:            "" #For Root Domain
+permalink:          /:year/:month/:day/:title/
+
 url: "http://d3chapma.github.io" # the base hostname & protocol for your site
 twitter_username: d3chapma
 github_username:  d3chapma
-collections:
-  - sublime_text
 
 # Build settings
 markdown: kramdown
 
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
