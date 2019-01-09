@@ -1,6 +1,8 @@
 ---
 layout: post
-title:  "Solving Mathematical Equations in Ruby"
+title:  "Solving Mathematical Equations in Ruby - Part 1"
+redirect_from:
+  - /2019/01/07/solving-mathimatical-expressions-in-ruby/
 ---
 
 I came across a programming problem online of being able to solve mathimatical equations. That seemed like an interesting problem to me, so I decided to give it a shot. This series of posts is my approach to solving the problem. 
