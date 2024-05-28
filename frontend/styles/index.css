@@ -115,7 +115,3 @@ h5:first-child {
     text-align: center;
     margin-top: 0;
 }
-
-pre.highlight {
-    overflow-x: scroll;
-}
