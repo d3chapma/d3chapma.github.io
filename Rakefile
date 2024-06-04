@@ -37,13 +37,36 @@ namespace :frontend do
   end
 end
 
-#
-# Add your own Rake tasks here! You can use `environment` as a prerequisite
-# in order to write automations or other commands requiring a loaded site.
-#
-# task :my_task => :environment do
-#   puts site.root_dir
-#   automation do
-#     say_status :rake, "I'm a Rake tast =) #{site.config.url}"
-#   end
-# end
+namespace :generate do
+  desc "Generate a new post"
+  task :post, [:name] do |t, args|
+    require 'date'
+
+    name = ENV['NAME']
+
+    # Ensure a name is provided
+    if name.nil? || name.strip.empty?
+      puts "Usage: rake generate:post name=\"My Post Title\""
+      exit 1
+    end
+
+    # Get the current date in YYYY-MM-DD format
+    date_str = Date.today.strftime('%Y-%m-%d')
+
+    kebab_case_name = name.strip.downcase.gsub(/[^a-z0-9]+/, '-').gsub(/^-|-$/, '')
+
+    # Combine the date and the provided name to form the filename
+    filename = "src/_posts/#{date_str}-#{kebab_case_name}.md"
+
+    # Create the file
+    File.open(filename, 'w') do |file|
+      # Write Frontmatter to the file
+      file.puts "---"
+      file.puts "layout: post"
+      file.puts "title: \"#{name}\""
+      file.puts "---"
+    end
+
+    puts "Created file: #{filename}"
+  end
+end
