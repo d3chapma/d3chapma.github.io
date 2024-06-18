@@ -3,9 +3,15 @@ layout: post
 title: "Adding a Post Generator to Bridgetown"
 ---
 
-I'm using [Bridgetown](https://www.bridgetownrb.com/) to write my blog. I chose it because it seemed like a spiritual successor to [Jekyll](https://jekyllrb.com/), but has a more modern stack with the ability to do more than static site generation.
+I'm using [Bridgetown](https://www.bridgetownrb.com/) to write my blog.
+I chose it because it seemed like a spiritual successor to
+[Jekyll](https://jekyllrb.com/), but has a more modern stack with the
+ability to do more than static site generation.
 
-However, in my effort to blog more often I need it to be as easy as possible to write a new post and one of the things that I was astounded that Bridgetown didn't have is an easy way to generate a file for a new post so I can get crackin'. So I wrote a quick Rake task to fill in the gap.
+However, in my effort to blog more often I need it to be as easy as
+possible to write a new post and one of the things that I was astounded
+that Bridgetown didn't have is an easy way to generate a file for a new
+post so I can get crackin'. So I wrote a quick Rake task to fill in the gap.
 
 ```rb
 namespace :generate do
@@ -43,12 +49,14 @@ namespace :generate do
 end
 ```
 
-I dropped this code into the Rakefile. As you can see, it creates a new namespaced task that we can run like so:
+I dropped this code into the Rakefile. As you can see, it creates a
+new namespaced task that we can run like so:
 
 ```rb
 rake generate:post NAME="The name of my post"
 ```
 
-It kebab cases the name and gets the current date for create the file for me and it adds the frontmatter to the top of the file as well.
+It kebab cases the name and gets the current date for create the file
+for me and it adds the frontmatter to the top of the file as well.
 
 Not complicated, but a welcome addition to make writing that little bit simpler.

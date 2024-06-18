@@ -5,16 +5,23 @@ redirect_from:
   - /2019/01/07/solving-mathimatical-expressions-in-ruby/
 ---
 
-I came across a programming problem online of being able to solve mathimatical equations. That seemed like an interesting problem to me, so I decided to give it a shot. This series of posts is my approach to solving the problem.
+I came across a programming problem online of being able to solve
+mathimatical equations. That seemed like an interesting problem to me,
+so I decided to give it a shot. This series of posts is my approach to
+solving the problem.
 
-What I want to start with is simply being able to solve a mathematical expression, such as `1 + 2`. It seems to me that this could be broken down into two parts.
+What I want to start with is simply being able to solve a mathematical
+expression, such as `1 + 2`. It seems to me that this could be broken
+down into two parts.
 
 1. Parse the string into a format that is easy to evaluate.
 2. Evaluate the result of parsing the string.
 
 # Step 2: Evaluating the result of parsing the string
 
-I'm going to start with step 2 because it will give me an easy result to test. The format I am going to parse into is [Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
+I'm going to start with step 2 because it will give me an easy result to
+test. The format I am going to parse into is
+[Reverse Polish Notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation).
 
 Let's write our first test:
 
@@ -34,7 +41,8 @@ describe Solver do
 end
 ```
 
-The algorithm for evaluating an expression in reverse polish notation is quite simple.
+The algorithm for evaluating an expression in reverse polish notation
+is quite simple.
 
 ```
 For each token in the RPN array,
@@ -84,7 +92,8 @@ end
 
 [Code on Github](https://github.com/d3chapma/equation_solver/commit/b8bb517537eb940c150048b050b00473844c3d15)
 
-This works and we can easily expand it by just adding to the `type` and `operate` methods. Let's add a new test with a few more operators.
+This works and we can easily expand it by just adding to the `type`
+and `operate` methods. Let's add a new test with a few more operators.
 
 ```ruby
 # spec/solver.rb
@@ -130,6 +139,9 @@ end
 
 [Code on Github](https://github.com/d3chapma/equation_solver/commit/8c90bc1662eb8b5d273a4f76d83234b94d74d09a)
 
-A simple change to handle the different types of operators and we successfully can evaluate an expression in reverse polish notation that includes addition, subtraction, multiplication, and division.
+A simple change to handle the different types of operators and we
+successfully can evaluate an expression in reverse polish notation
+that includes addition, subtraction, multiplication, and division.
 
-In the next article we will look at converting an expression from infix notation into reverse polish notation.
+In the next article we will look at converting an expression from infix
+notation into reverse polish notation.

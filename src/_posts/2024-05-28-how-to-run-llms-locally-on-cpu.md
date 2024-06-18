@@ -21,7 +21,8 @@ huggingface-cli login
 ## Set up llama.cpp
 
 [llama.cpp](https://github.com/ggerganov/llama.cpp/?tab=readme-ov-file#llamacpp)
-is a tool for running models on a wide variety of hardware. In order to set it up, first clone the repository
+is a tool for running models on a wide variety of hardware. In order
+to set it up, first clone the repository
 
 ```sh
 git clone git@github.com:ggerganov/llama.cpp.git
@@ -38,25 +39,34 @@ make -j8
 
 You can browse the available models [here](https://huggingface.co/models).
 
-> Choosing a model is beyond the scope of this post, but you might choose a model based on features, benchmarks, or number of parameters (more parameters means higher memory requirements and longer inference times, but hopefully better quality results).
+> Choosing a model is beyond the scope of this post, but you might
+choose a model based on features, benchmarks, or number of
+parameters (more parameters means higher memory requirements and
+longer inference times, but hopefully better quality results).
 
 ![Clone Hugging Face Model](/images/clone-huggingface-model.png)
 
-Once you have chosen a model, click the "Clone respository" button and follow the instructions in the modal dialog.
+Once you have chosen a model, click the "Clone respository" button
+and follow the instructions in the modal dialog.
 
-In this example, I will be using [Meta Llama 3 3B Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) and saving it in a `models` directory that lives outside of the llama.cpp repo.
+In this example, I will be using
+[Meta Llama 3 3B Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)
+and saving it in a `models` directory that lives outside of the llama.cpp repo.
 
 ## Quantize the model
 
 Finally! We are now ready to quantize the model. Almost...
 
-First we need to convert the model to `gguf` format. That is one of the formats that llama.cpp can run inference with.
+First we need to convert the model to `gguf` format. That is one of
+the formats that llama.cpp can run inference with.
 
 ```sh
 python convert.py ../models/Meta-Llama-3-8B-Instruct/ --outfile ../models/Meta-Llama-3-8B-Instruct.gguf --outtype f16 --vocab-type bpe
 ```
 
-Ok, *now* we can quantize. This command takes the `.gguf` we generated in the last step and creates a new one using the `q4_k_m` method, which quantizes to 4-bits.
+Ok, *now* we can quantize. This command takes the `.gguf` we generated in
+the last step and creates a new one using the `q4_k_m` method, which
+quantizes to 4-bits.
 
 ```sh
 ./quantize ../models/Meta-Llama-3-8B-Instruct.gguf ../models/Meta-Llama-3-8B-Instruct_q4_k_m.gguf q4_k_m
