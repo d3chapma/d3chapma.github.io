@@ -34,7 +34,7 @@ a {
 }
 
 h1 {
-    margin: 1rem 0 3rem;
+    margin: 1rem 0 1rem;
     text-align: center;
     font-weight: 900;
     font-size: 2.5rem;
@@ -121,4 +121,8 @@ hr {
 h5:first-child {
     text-align: center;
     margin-top: 0;
+}
+
+.tags {
+    text-align: center;
 }

@@ -8,6 +8,14 @@ layout: default
 
 <h1><%= data.title %></h1>
 
+<div class="tags">
+    <span class="muted">
+    <% data.tags.each do |tag| %>
+        #<%= tag %>
+    <% end %>
+    </span>
+</div>
+
 <%= yield %>
 
 <%= render "post_nav", index: index, date: data.date %>
