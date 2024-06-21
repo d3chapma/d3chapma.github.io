@@ -17,7 +17,7 @@ down into two parts.
 1. Parse the string into a format that is easy to evaluate.
 2. Evaluate the result of parsing the string.
 
-# Step 2: Evaluating the result of parsing the string
+## Step 2: Evaluating the result of parsing the string
 
 I'm going to start with step 2 because it will give me an easy result to
 test. The format I am going to parse into is

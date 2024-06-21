@@ -9,7 +9,7 @@ It seems to be the first commit to have some functional code. I was
 interested to see how it worked.
 
 
-# What does this experimental version of Vue do?
+## What does this experimental version of Vue do?
 
 You are able to write HTML that has a root element with an `id` and uses
 double-curlies to denote variables.
@@ -51,17 +51,17 @@ app.data.name = 'John'
 </div>
 ```
 
-# How does this work?
+## How does this work?
 
 
-## Step One: Setup
+### Step One: Setup
 
 The first thing that Vue does is setup two variables. One is a `bindings`
 object that stores a reference to each `span` that it is keeping up-to-date.
 The other is a `data` object that facilitates the core functionality of Vue.
 More on this later.
 
-## Step Two: Prep the DOM
+### Step Two: Prep the DOM
 
 Vue then finds the element that has an `id` equal to your first parameter,
 `my-app`, and uses a regular expression to replace all double-curlies with
@@ -82,7 +82,7 @@ bindings = {
 }
 ```
 
-## Step Three: Bind the DOM to Data
+### Step Three: Bind the DOM to Data
 
 Vue loops over all the keys that it setup in `bindings` and does the
 following for each key:
@@ -134,13 +134,13 @@ This is the meat of the code, so I'm going to drop it right in.
 
     The getter is simple. It just returns the value from the `bindings` object.
 
-## Step Four: Initialize the Data
+### Step Four: Initialize the Data
 
 Finally, it takes that data that was initially passed in as the second
 argument and sets that data on the `data` object. Since the bindings are
 already setup, this puts the DOM in the expected initial state.
 
-# Outro
+## Outro
 
 It is remarkable how similar Vue's current API is to the one designed in
 this experimental version. Not only that, but the implementation is
