@@ -114,7 +114,8 @@ hr {
 }
 
 .post-nav {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 h5:first-child {

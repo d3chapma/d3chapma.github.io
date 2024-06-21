@@ -4,7 +4,6 @@
 layout: default
 ---
 
-
 <% collections.posts.resources.each do |post| %>
   <div class="post-item">
     <a href="<%= post.relative_url %>"><%= post.data.title %></a>

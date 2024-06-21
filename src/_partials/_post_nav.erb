@@ -1,0 +1,15 @@
+<nav class="post-nav">
+    <% if index < collections.posts.resources.size - 1 %>
+        <%= link_to "Previous", collections.posts.resources[index+1].relative_url %>
+    <% else %>
+        <span class="muted" title="This is the first post">Previous</span>
+    <% end %>
+
+    <span class="muted"><%= date_to_string date, "ordinal", "US" %></span>
+
+    <% if index > 0 %>
+        <%= link_to "Next", collections.posts.resources[index-1].relative_url %>
+    <% else %>
+        <span class="muted" title="This is the last post">Next</span>
+    <% end %>
+</nav>
