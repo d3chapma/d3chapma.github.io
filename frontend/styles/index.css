@@ -99,6 +99,12 @@ hr {
     font-size: 1rem;
 }
 
+@media (max-width: 800px) {
+    .post-item {
+        flex-direction: column;
+    }
+}
+
 .post-item {
     font-size: 1.5rem;
     margin-bottom: 24px;
