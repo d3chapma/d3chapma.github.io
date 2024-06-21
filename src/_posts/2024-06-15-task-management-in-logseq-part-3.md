@@ -13,8 +13,7 @@ for a category to our query from
 
 ## The Query
 
-```js
-#+BEGIN_QUERY
+```clojure
 {
   :title            "NOW"
   :query            [
@@ -26,15 +25,13 @@ for a category to our query from
   :result-transform (fn [result] ( result))
   :breadcrumb-show? false
 }
-#+END_QUERY
 ```
 
 Here is the original query. Again, we are grabbing all blocks with a marker that is
 equal to "NOW" or "DOING". We remove any superfluous content around the tasks with the
 `:result-transform` and `:breadbrumb-show?` clauses. The next step is quite simple.
 
-```js
-#+BEGIN_QUERY
+```clojure
 {
   :title            "WORK"
   :query            [
@@ -48,7 +45,6 @@ equal to "NOW" or "DOING". We remove any superfluous content around the tasks wi
   :breadcrumb-show? false
   :collapsed?       true
 }
-#+END_QUERY
 ```
 
 In this query,
@@ -73,5 +69,6 @@ you can think of.
 
 ## Next Steps
 
-Next we will look at scheduled tasks and how we can effectively snooze a task to
+<%= link_to "Next", "_posts/2024-06-20-task-management-in-logseq-part-4.md" %>
+we will look at scheduled tasks and how we can effectively snooze a task to
 make it hidden until a specific date passes.

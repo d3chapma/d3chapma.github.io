@@ -19,34 +19,16 @@ Logseq has a great way to bring together a dynamic list of blocks from
 throughout your graph using something called queries. Let's take a look
 at a simple one and if you have some tasks in Logseq you can follow along.
 
-For copying:
-```js
-#+BEGIN_QUERY
+```clojure
 {
-  :title            "NOW"
+  :title            "NOW" ;; Title of the query
   :query            [
-                      :find (pull ?b [*])
-                      :where
-                        [?b :block/marker ?m]
-                        [(contains? #{"NOW", "DOING"} ?m)]
+                      :find (pull ?b [*]) ;; Grab each block in graph as ?b
+                      :where ;; This is required. Logseq will not output query without a filter
+                        [?b :block/marker ?m] ;; Grab each block's marker as ?m
+                        [(contains? #{"NOW", "DOING"} ?m)] ;; Filter to only "NOW" and "DOING" tasks
                     ]
 }
-#+END_QUERY
-```
-
-With comments:
-```js
-#+BEGIN_QUERY
-{
-  :title            "NOW" // Title of the query
-  :query            [
-                      :find (pull ?b [*]) // Grab each block in graph as ?b
-                      :where // This is required. Logseq will not output query without a filter
-                        [?b :block/marker ?m] // Grab each block's marker as ?m
-                        [(contains? #{"NOW", "DOING"} ?m)] // Filter to only "NOW" and "DOING" tasks
-                    ]
-}
-#+END_QUERY
 ```
 
 ![Queries: Step 1](/images/logseq-query-step-1.png)
@@ -56,8 +38,7 @@ when you unfocus the block you get a list titled "NOW" with the children
 being all the `NOW` tasks in your graph. However, we don't want
 each task to be wrapped in a page container. Let's fix that:
 
-```js
-#+BEGIN_QUERY
+```clojure
 {
   :title            "NOW"
   :query            [
@@ -68,7 +49,6 @@ each task to be wrapped in a page container. Let's fix that:
                     ]
   :result-transform (fn [result] ( result))
 }
-#+END_QUERY
 ```
 
 `result-transform` allows you to transform the result of each item
@@ -79,8 +59,7 @@ that the query outputs. Here we just reduce it to it's result and we get this:
 Much better! But see that "Parent to task". That happens for tasks that are
 not top level blocks on a page. Let's fix that too.
 
-```js
-#+BEGIN_QUERY
+```clojure
 {
   :title            "NOW"
   :query            [
@@ -92,7 +71,6 @@ not top level blocks on a page. Let's fix that too.
   :result-transform (fn [result] ( result))
   :breadcrumb-show? false
 }
-#+END_QUERY
 ```
 
 `:breadcrumb-show?` allows you to toggle whether you want to see
