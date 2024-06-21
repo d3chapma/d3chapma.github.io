@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Task Management in Logseq: Part 1"
+tags: ["task-management","logseq"]
 ---
 
 I use [Logseq](https://logseq.com/) as a personal knowledge base.

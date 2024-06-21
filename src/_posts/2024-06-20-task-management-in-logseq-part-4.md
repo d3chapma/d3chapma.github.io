@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Task Management in Logseq: Part 4"
+tags: ["task-management","logseq"]
 ---
 
 If you have read

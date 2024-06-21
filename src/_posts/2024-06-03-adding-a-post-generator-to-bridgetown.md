@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Adding a Post Generator to Bridgetown"
+tags: ["bridgetown"]
 ---
 
 I'm using [Bridgetown](https://www.bridgetownrb.com/) to write my blog.

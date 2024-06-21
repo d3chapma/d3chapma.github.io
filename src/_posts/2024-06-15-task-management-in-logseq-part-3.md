@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Task Management in Logseq: Part 3"
+tags: ["task-management","logseq"]
 ---
 
 The next step in building the ideal task management solution in

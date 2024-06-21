@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Automatic Deployment to Github Pages with Bridgetown"
+tags: ["bridgetown"]
 ---
 
 One great aspect of [Bridgetown](https://www.bridgetownrb.com/) is
