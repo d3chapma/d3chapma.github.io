@@ -42,7 +42,7 @@ section. Great right? No, not really.
 What we want is to have these tasks on today's journal page and make sure
 that tasks will never get lost in the depths of our knowledge graph. We
 do this with [queries](https://docs.logseq.com/#/page/queries). In the
-<%= link_to "following posts", "_posts/2024-06-12-task-management-in-logseq-part-2.md" %>
+following posts
 I will outline how I have set up Logseq to be the perfect
 task management app for me using queries to show all the tasks in my graph
 on today's journal page.

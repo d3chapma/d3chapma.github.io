@@ -14,22 +14,22 @@ just what I need to do next, and keeping the other lists collapsed by default.
 Another strategy for this minimalist approach is scheduling tasks. By scheduling
 a task in Logseq, you can give it a date in the future that you can filter on. In
 my "Now" list, I hide any tasks that are scheduled for a day in the future, but show
-all tasks that are scheduled for a today or earlier and I do the same for my "Later"
+all tasks that are scheduled for today or earlier and I do the same for my "Later"
 lists as well.
 
 ## Scheduling Tasks in Logseq
 
 First things first, how do you schedule tasks in Logseq? At the end of the task,
 type `/scheduled`. You'll notice that as you start to type it shows a dropdown
-of options. Hitting enter on "Scheduled" opens a date picker. Notice that you
-can pick a date, add a time, or even add repeating (we'll address that in the
+of options. Hitting enter on "Scheduled" opens a date picker. You
+can pick a date, add a time, or even set a task to repeat (we'll address that in the
 next post). If you add a scheduled task in your Logseq, you may notice that you
-see a "SCHEDULED AND DEADLINE" list at the bottom of today's journal. IMO,
+see a "SCHEDULED AND DEADLINE" list at the bottom of today's journal. Personally,
 that is unnecessary and I prefer to remove it. If you agree, you can remove
 it by editing the config like we have done previously. You'll see a line
 commented out that looks like:
 
-```
+```clojure
 ;; :feature/disable-scheduled-and-deadline-query? false
 ```
 
@@ -61,13 +61,15 @@ query.
 }
 ```
 
+Here is what changed:
+
 First we need a way to get the current date. We do that by adding adding
 
 ```clojure
 :inputs [:today]
 ```
 
-However, we need to actually receive that and assign it to a variable we can
+However, we need to actually receive that and assign it to a variable that we can
 use in our query. We acheive that with the `:in` clause in our query:
 
 ```clojure
@@ -78,7 +80,7 @@ The first parameter to the `:in` clause is always `$`, which is a reference to t
 database. All queries have a `:in $` inferred by default, but when you are providing
 your own `:in` clause you need to remember the `$`.
 
-Next we want to specify that we only want tasks scheduled after today. You can do
+Next we want to specify that we only want tasks scheduled for today or earlier. You can do
 that with these two lines:
 
 ```clojure
@@ -86,17 +88,18 @@ that with these two lines:
 [(<= ?scheduled ?today)]
 ```
 
-This means assign the scheduled date of the block to the variable `?scheduled`
-and filter to only blocks that were scheduled for before today. However, this
+This assigns the scheduled date of the block to the variable `?scheduled`
+and filters to only blocks that were scheduled for before today. However, this
 causes us to only see tasks that are scheduled because if the task isn't scheduled,
-then it doesn't meet the filter. We fix this using a `get-else` function:
+then it doesn't meet the filter. We fix this using a `get-else` function instead
+to set the `?scheduled` varailbe:
 
 ```clojure
 [(get-else $ ?b :block/scheduled ?today) ?scheduled]
 ```
 
 This also assigns the `?scheduled` variable, but this time using `get-else`
-we are able to provide a default value, for which we provide `?today`. So if the
+we are able to provide a default value, `?today`. So if the
 task is not scheduled it will appear to the query that it is scheduled for today.
 This brings all our unscheduled tasks back into the list.
 

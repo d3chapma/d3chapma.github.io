@@ -4,8 +4,7 @@ title: "Task Management in Logseq: Part 2"
 tags: ["task-management","logseq"]
 ---
 
-As I outlined in my
-<%= link_to "previous post", "_posts/2024-06-11-task-management-in-logseq.md" %>,
+As I outlined in my previous post,
 [Logseq](https://logseq.com/) has a great foundation for managing
 tasks. However, with a bit of tweaking it can become one of the best
 task management systems out there, partially attributed to being able to
@@ -22,13 +21,13 @@ at a simple one and if you have some tasks in Logseq you can follow along.
 
 ```clojure
 {
-  :title            "NOW" ;; Title of the query
-  :query            [
-                      :find (pull ?b [*]) ;; Grab each block in graph as ?b
-                      :where ;; This is required. Logseq will not output query without a filter
-                        [?b :block/marker ?m] ;; Grab each block's marker as ?m
-                        [(contains? #{"NOW", "DOING"} ?m)] ;; Filter to only "NOW" and "DOING" tasks
-                    ]
+  :title  "NOW" ;; Title of the query
+  :query  [
+            :find (pull ?b [*]) ;; Grab each block in graph as ?b
+            :where ;; This is required. Logseq will not output query without a filter
+              [?b :block/marker ?m] ;; Grab each block's marker as ?m
+              [(contains? #{"NOW", "DOING"} ?m)] ;; Filter to only "NOW" and "DOING" tasks
+          ]
 }
 ```
 
@@ -41,13 +40,13 @@ each task to be wrapped in a page container. Let's fix that:
 
 ```clojure
 {
-  :title            "NOW"
-  :query            [
-                      :find (pull ?b [*])
-                      :where
-                        [?b :block/marker ?m]
-                        [(contains? #{"NOW", "DOING"} ?m)]
-                    ]
+  :title  "NOW"
+  :query  [
+            :find (pull ?b [*])
+            :where
+              [?b :block/marker ?m]
+              [(contains? #{"NOW", "DOING"} ?m)]
+         ]
   :result-transform (fn [result] ( result))
 }
 ```
@@ -62,13 +61,13 @@ not top level blocks on a page. Let's fix that too.
 
 ```clojure
 {
-  :title            "NOW"
-  :query            [
-                      :find (pull ?b [*])
-                      :where
-                        [?b :block/marker ?m]
-                        [(contains? #{"NOW", "DOING"} ?m)]
-                    ]
+  :title  "NOW"
+  :query  [
+            :find (pull ?b [*])
+            :where
+              [?b :block/marker ?m]
+              [(contains? #{"NOW", "DOING"} ?m)]
+          ]
   :result-transform (fn [result] ( result))
   :breadcrumb-show? false
 }
@@ -134,4 +133,4 @@ above the date.
 That is a great step forward, but I like to also have my `LATER` tasks
 in a collapsed list below the tasks for today. That way when I need to
 grab some new tasks, finding some is easy. That's what we will tackle
-<%= link_to "next", "_posts/2024-06-15-task-management-in-logseq-part-3.md" %>.
+next.
