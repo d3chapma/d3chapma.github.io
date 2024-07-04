@@ -2,6 +2,7 @@
 # Feel free to add content and custom Front Matter to this file.
 
 layout: default
+sitemap_change_frequency: weekly
 ---
 
 <% collections.posts.resources.each do |post| %>
