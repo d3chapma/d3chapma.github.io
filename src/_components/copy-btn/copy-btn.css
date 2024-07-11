@@ -1,23 +1,19 @@
 pre.highlight {
     overflow-x: auto;
+    padding-bottom: 50px;
 }
 
 .copy-btn {
     position: absolute;
     background-color: #eee;
-    top: 10px;
+    bottom: 10px;
     right: 10px;
-    opacity: 0;
     border-radius: 2px;
     padding: 4px;
     cursor: pointer;
     width: 100px;
     text-align: center;
     transition: 300ms opacity;
-}
-
-div.highlight:hover .copy-btn {
-    opacity: 1;
 }
 
 div.highlight {
