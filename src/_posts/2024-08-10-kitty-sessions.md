@@ -9,17 +9,19 @@ it was [Warp](https://www.warp.dev/) and before that, [iTerm2](https://iterm2.co
 
 I have many different products that I maintain in my day-to-day and it is very convenient to be able to
 quickly open an environment that has everything I need. For example, when I work on
-[D3M](https://www.d3mnetworks.com/) I want to open a new instance of kitty with:
+[D3M](https://www.d3mnetworks.com/) I want:
 
 - One tab open in my local git repo
 - Another tab open with multiple kitty windows:
- - Rails server
- - Sidekiq
- - Redis
- - Webpack
+  - Rails server
+  - Sidekiq
+  - Redis
+  - Webpack
 - Launch [Zed](https://zed.dev/) with the repo as the active project
 - Ensure I'm running the right version of postgres
 - Start the elasticsearch container in docker
+
+That is a lot of stuff to start and need running to be ready to begin working.
 
 Warp had something called
 [Launch Configurations](https://docs.warp.dev/features/sessions/launch-configurations)
