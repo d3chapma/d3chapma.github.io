@@ -42,6 +42,7 @@ namespace :generate do
       file.puts "---"
       file.puts "layout: post"
       file.puts "title: \"#{name}\""
+      file.puts "tags: []"
       file.puts "---"
     end
 
