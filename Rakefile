@@ -46,7 +46,7 @@ namespace :generate do
 
     # Ensure a name is provided
     if name.nil? || name.strip.empty?
-      puts "Usage: rake generate:post name=\"My Post Title\""
+      puts "Usage: rake generate:post NAME=\"My Post Title\""
       exit 1
     end
 
