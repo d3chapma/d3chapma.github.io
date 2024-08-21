@@ -3,6 +3,7 @@
   <head>
     <%= render "head", metadata: site.metadata, title: data.title %>
     <%= seo %>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="c85b2409-a635-414e-a112-c9fc800f44a9"></script>
   </head>
   <body class="<%= data.layout %> <%= data.page_class %>">
     <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
